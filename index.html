@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .heart {
+            display: block;
+            width: 150px;
+            height: 150px;
+        }
+
+        .message {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 5px #ff69b4;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .cake {
+            width: 350px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .flowers {
+            margin-top: 20px;
+        }
+
+        .flower {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Adding space between flowers and cake */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Heart Image -->
+        <img src="heart.png" alt="Heart" class="heart" id="heart">
+
+        <!-- Message -->
+        <div class="message" id="message">Happy Birthday Ethan!</div>
+
+        <!-- Flower Image -->
+        <img src="flowers.png" alt="Flower" class="flower" id="flowers">
+
+        <!-- Cake Image (visible immediately) -->
+        <img src="cake.png" alt="Cake" class="cake" id="cake">
+    </div>
+
+    <audio id="birthdayMusic" src="happy-birthday.mp3" preload="auto"></audio>
+
+    <script>
+        // Trigger audio when the user clicks anywhere on the page
+        document.body.addEventListener('click', () => {
+            const music = document.getElementById('birthdayMusic');
+            music.play();
+
+            // Make flowers and cake appear immediately (no delays)
+            document.getElementById('flowers').style.display = 'block';
+            document.getElementById('cake').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
